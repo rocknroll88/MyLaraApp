@@ -24,4 +24,10 @@ class UnsplashService
         $this->photos = Search::photos($search, $page, $per_page, $orientation);
 
     }
+
+
+    public function testFunc()
+    {
+        
+    }
 }
