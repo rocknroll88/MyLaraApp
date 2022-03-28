@@ -18,9 +18,12 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
+// Route::any('/dashboard', function () {
+//     return view('dashboard');
+// })->middleware(['auth'])->name('dashboard');
+
+Route::get('/dashboard', [TestController::class, 'index'])->middleware(['auth'])->name('dashboard');
+Route::post('/dashboard', [TestController::class, 'store'])->middleware(['auth'])->name('dashboard.store');
 
 require __DIR__.'/auth.php';
 
