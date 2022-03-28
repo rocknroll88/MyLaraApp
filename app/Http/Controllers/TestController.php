@@ -11,14 +11,19 @@ class TestController extends Controller
     public function index()
     {
         $unsplash = new UnsplashService();
-        // echo '<pre>';
-        // var_dump($unsplash->photos->getResults());
-        // echo '</pre>';
-
         $collection = collect($unsplash->photos->getResults());
         foreach ($collection->all() as $picture) {
-            var_dump($picture);
-            break;
+            // var_dump($picture);
+            // break;
+            
+            $result = DB::table('pictures')->insert([
+                'alt_description'=> $picture['alt_description'],
+                'urls' => json_encode($picture['urls']),
+                'created_at' => now(),
+                'updated_at' => now(),
+            ]);
         }
+
+        echo $result;
     }
 }
