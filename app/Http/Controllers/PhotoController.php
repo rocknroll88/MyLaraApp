@@ -39,6 +39,16 @@ class PhotoController extends Controller
         }
 
             //Storage::disk('local')->put(sha1($image) . '.jpg', file_get_contents($image));
-        return back();
+        return back()->with('search-success', 'Изображения найдены и успешно добавлены в БД!');
+    }
+
+    public function view()
+    {
+        $photos = [];
+        foreach(Photo::all() as $photo)
+        {
+            $photos[] = json_decode($photo->urls);
+        }
+        return view('photos', compact('photos'));
     }
 }

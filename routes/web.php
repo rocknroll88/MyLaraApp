@@ -22,6 +22,7 @@ Route::get('/', function () {
 
 Route::get('/dashboard', [PhotoController::class, 'index'])->middleware(['auth'])->name('dashboard');
 Route::post('/dashboard', [PhotoController::class, 'store'])->middleware(['auth'])->name('dashboard.store');
+Route::get('/dashboard/photos', [PhotoController::class, 'view'])->middleware(['auth'])->name('dashboard.photos');
 
 require __DIR__.'/auth.php';
 
