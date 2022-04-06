@@ -11,9 +11,9 @@ class UnsplashService
     public function __construct()
     {
         HttpClient::init([
-            'applicationId' => 'Seqxf62s--OjruqzEE4rByhKkdLDQoW6b3Giw0Juyro',
-            'secret' => 'B0Ku6OaL1zLZRJ9dpM9kIg6KUrpuH7E7FvNTVKP8JhE',
-            'utmSource' => 'wallfun'
+            'applicationId' => env('UNSPLASH_ID'),
+            'secret' => env('UNSPLASH_SECRET'),
+            'utmSource' => env('UNSPLASH_UTM')
         ]);
     }
 
