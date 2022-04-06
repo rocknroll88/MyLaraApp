@@ -7,7 +7,7 @@
 
     <div class="container mt-6">
         <div class="row">
-            <div class="col-xl-3">
+            <!-- <div class="col-xl-3">
                 <div class="card">
                     <h5 class="card-header">Featured</h5>
                     <div class="card-body">
@@ -16,9 +16,9 @@
                         <a href="#" class="btn btn-primary">Go somewhere</a>
                     </div>
                 </div>
-            </div>
+            </div> -->
             <div class="col-xl-3">
-                <div class="card">
+                <div class="card mt-3">
                     <h5 class="card-header">Поиск новых изображений</h5>
                     <div class="card-body">
                         <form role="form" method="post" action="{{ route('dashboard.store') }}">
