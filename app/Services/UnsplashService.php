@@ -23,4 +23,9 @@ class UnsplashService
 
         return $photos;
     }
+
+    public function test()
+    {
+
+    }
 }
